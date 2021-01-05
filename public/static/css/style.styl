@@ -1,0 +1,235 @@
+blanco = #ffffff
+negro = #000000
+color1 = #2caaff
+color2 = #083B66
+color3 = #fdd700
+color4 = #334F9A
+
+body
+    background-color: #f9f9f9
+    font-size: 14px
+    font-family: 'Roboto',sans-serif
+
+a.btn
+    &:active
+    &:focus
+        box-shadow: none !important
+        outline: none !important
+
+.form-control,.form-select
+    &:focus
+        box-shadow: none;
+        outline: none;
+
+.mtop16
+    margin-top: 16px
+
+.mtop32
+    margin-top: 32px
+
+nav
+    background-color: blanco
+    border-bottom: 2px solid color1
+    .navbar-brand
+        img
+            width: 200px
+    .navbar-nav
+        li.nav-item
+            a.nav-link
+                border: 1px solid blanco
+                border-radius: 4px
+                color: negro !important
+                font-size:  .9em
+                font-weight: bold
+                margin-right: 4px
+                padding: 5px 16px !important
+                &:hover
+                    background-color: color2
+                    color: blanco !important
+            a.btn
+                border: 1px solid color1
+                color: negro
+                &:hover
+                    background-color: color3
+                    color: negro !important
+            .dropdown-menu
+                background-color: blanco
+                border: 0px
+                border-radius: 0px 0px 4px 4px
+                top 150%
+                li
+                    border-bottom: 1px solid blanco !important
+                    a
+                        color: nego  !important
+                        display: block
+                        float: none
+                        width: 100%
+                        &:hover
+                            background-color: color2 !important
+                            color: blanco !important
+                    &:last-child
+                        border-bottom: 0px !important
+
+        li.link-acc
+            overflow: hidden
+            a
+                display: inline-block
+                float: left
+                margin-right: 0px !important
+                &:first-child
+                    border-radius: 4px 0px 0px 4px
+                    border-right: 0px
+                &:last-child
+                    border-radius: 0px 4px 4px 0px
+                img
+                    margin-right: 6px
+                    position: relative
+                    top: -1px
+                    width: 24px
+        li.link-user
+            overflow: initial
+            position: relative
+            top: -2px
+            a
+                border: 0px !important
+                &:hover
+                    background-color: transparent !important
+
+.wrapper
+    .panel
+        background-color: blanco
+        border-radius: 6px
+        border-bottom: 2px solid color1
+        width: 100%
+        .header
+            border-bottom: 1px solid #e8e8e8
+            h2.title
+                display: inline-block
+                color: #19213d
+                font-size: 1.1em
+                margin-bottom: 0px
+                padding: 12px 16px
+            ul
+                display: inline-block
+                float: right
+                margin-right: 12px
+                li
+                    display: inline-block
+                    position: relative
+                    a
+                        color: #333
+                        display: inline-block
+                        padding: 10px
+                        &:hover
+                            background-color: #f0f0f0
+                            color: #222
+                            text-decoration: none
+                        i
+                            color: color1
+                    ul
+                        background-color: blanco
+                        border: 1px solid #f0f0f0
+                        display: none
+                        float: none
+                        position: absolute
+                        right: -16px
+                        width: 200px
+                        li
+                            display: inline-block
+                            border-bottom: 1px solid #f0f0f0
+                            width: 100%
+                            &:last-child
+                                border-bottom: 0px
+                    &:hover
+                        ul
+                            display: block
+                            a
+                                display: block
+                                width: 100%
+
+            .back
+                color: color1;
+                font-size: 20px !important
+                margin: auto 10px;
+            .back-link
+                color: #007bff;
+                margin: auto 10px;
+
+                &:hover
+                    color: #0056b3;
+                    text-decoration: none;
+            .w-100-2
+                width: 85% !important;
+
+        .inside
+            padding: 16px
+            .nav
+                .nav-link
+                    border: 1px solid color1
+                    margin-right: 8px
+                    &:hover
+                        background-color: color1
+                        color: #ffffff
+            .btn-my-primary
+                background-color: color1
+                border-color: color1;
+                color: #fff;
+            .dropdown
+                .dropdown-menu
+                    .dropdown-item:active
+                        color: #fff;
+                        text-decoration: none;
+                        background-color: color1;
+            .form_search
+                display: none
+                margin-bottom: 16px
+                .btn
+                    width: 100%
+            .big_count
+                display: block;
+                font-size: 2em;
+                text-align: center;
+                width: 100%;
+            .edit_avatar
+                a
+                    display: block
+                    margin:  0px auto
+                    position: relative
+                    width: 140px
+                    .overlay
+                        align-items: center
+                        background-color: rgba(0, 0, 0, .55)
+                        border-radius: 50%
+                        color: blanco
+                        cursor: pointer
+                        display: none
+                        font-size: 2em
+                        height 140px
+                        justify-content: center
+                        position: absolute
+                        width: 100%
+                        img
+                            width: 60px
+                            border: 0px
+                    &:hover
+                        .overlay
+                            display: flex
+                    img
+                        border: 2px solid color1
+                        border-radius: 50%
+                        display: block
+                        margin-bottom: 8px
+                        width: 100%
+                .form-control
+                        display: none
+        .btn-primary
+            background-color: color1
+            border-color: color1
+            padding: 8px 32px
+            &:hover
+                background-color: color2
+                border-color: color2
+            &:focus
+                box-shadow: none;
+                outline: none;
+

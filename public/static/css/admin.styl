@@ -1,0 +1,267 @@
+body
+    background-color: #f5f6fa
+    font-size: 14px
+    font-family: 'Roboto', sans-serif
+
+h2,h3,h4,h5,ul,body,html
+    padding: 0px
+    margin: 0px
+
+a
+    text-decoration: none;
+    &:hover
+        text-decoration: none;
+
+.form-control,.form-select
+    &:focus
+        box-shadow: none;
+        outline: none;
+
+.form-check-input:checked
+    background-color: #2caaff;
+    border-color: #2caaff;
+
+
+.wrapper
+    min-height: 100vh
+    overflow: hidden
+    .col1
+        float: left
+        position: relative
+        z-index: 999
+        width: 17%
+    .col2
+        float: left
+        width: 83%
+
+.mtop16
+    margin-top: 16px
+
+.mbottom16
+    margin-bottom: 16px;
+
+.sidebar
+    background-color: #ffffff
+    min-height: 100vh
+    .section-top
+        background-color: #2caaff
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15)
+    .logo
+        display: block
+        margin: 0px auto
+        padding-top: 24px
+        width: 60%
+    .user
+        color: #fff !important
+        padding: 16px
+        a
+            color: #ffffff
+            font-size: 1.2em
+
+    .main
+        display: block
+        margin-top: 8px
+        ul
+         li
+            margin-bottom: 4px
+            a
+                color: #8998AC
+                display: block
+                font-size: 1.1em
+                padding: 12px 12px
+                text-decoration: none
+                i
+                    margin-right: 10px
+                &:hover
+                    background-color: #2caaff
+                    color: #FFFFFF
+                    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15)
+            a.active
+                    background-color: #2caaff
+                    color: #FFFFFF
+                    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15)
+
+.navbar
+    background-color: #2caaff !important
+    a
+        color: #fff !important
+    .dropdown-menu
+        .dropdown-item
+            color: #000 !important;
+    .dropdown-toggle
+        font-size: 20px
+
+.page
+    padding-top: 16px;
+    padding-bottom: 16px;
+    .breadcrumb
+        background-color: #ffffff
+        border-radius: 5px;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.10) !important
+        padding: 6px;
+        .breadcrumb-item
+            a
+                color: #2caaff;
+                &:hover
+                    text-decoration: none
+    .panel
+        background-color: #ffffff
+        border-radius: 6px
+        border-bottom: 2px solid #2caaff
+        width: 100%
+        .header
+            border-bottom: 1px solid #e8e8e8
+            h2.title
+                display: inline-block
+                color: #19213d
+                font-size: 1.1em
+                padding: 12px 16px
+            ul
+                display: inline-block
+                float: right
+                margin-right: 12px
+                li
+                    display: inline-block
+                    position: relative
+                    a
+                        color: #333
+                        display: inline-block
+                        padding: 10px
+                        &:hover
+                            background-color: #f0f0f0
+                            color: #222
+                            text-decoration: none
+                        i
+                            color: #2caaff
+                    ul
+                        background-color: #fff
+                        border: 1px solid #f0f0f0
+                        display: none
+                        float: none
+                        position: absolute
+                        right: -16px
+                        width: 200px
+                        li
+                            display: inline-block
+                            border-bottom: 1px solid #f0f0f0
+                            width: 100%
+                            &:last-child
+                                border-bottom: 0px
+                    &:hover
+                        ul
+                            display: block
+                            a
+                                display: block
+                                width: 100%
+
+            .back
+                color: #2caaff;
+                font-size: 20px !important
+                margin: auto 10px;
+            .back-link
+                color: #007bff;
+                margin: auto 10px;
+
+                &:hover
+                    color: #0056b3;
+                    text-decoration: none;
+            .w-100-2
+                width: 85% !important;
+
+        .inside
+            padding: 16px
+            .nav
+                .nav-link
+                    border: 1px solid #2caaff
+                    margin-right: 8px
+                    &:hover
+                        background-color: #2caaff
+                        color: #ffffff
+            .btn-my-primary
+                background-color: #2caaff
+                border-color: #2caaff;
+                color: #fff;
+            .dropdown
+                .dropdown-menu
+                    .dropdown-item:active
+                        color: #fff;
+                        text-decoration: none;
+                        background-color: #2caaff;
+            .form_search
+                display: none
+                margin-bottom: 16px
+                .btn
+                    width: 100%
+            .big_count
+                display: block;
+                font-size: 2em;
+                text-align: center;
+                width: 100%;
+.opts
+    a
+        border-radius: 4px
+        border 1px solid #dedede
+        display: inline-block
+        padding: 8px 12px
+
+.product_gallery
+    overflow: hidden
+    .btn-submit
+        cursor: pointer
+        display: block
+        margin-right: 1%
+        width: 100%
+        a
+            border: 1px dashed #6666
+            border-radius: 4px
+            color: #333
+            display: block
+            font-size: 1.5em
+            text-align: center
+            padding: 12px
+            width: 100%
+            &:hover
+                background-color: #2caaff
+                color: #ffffff
+    .tumbs
+        overflow: hidden
+        .tumb
+            float: left
+            position: relative
+            width: 48%
+            .btn-del
+                background-color: rgba(0, 0, 0 .5)
+                border-radius: 50%
+                color: #ffffff
+                display: inline-block
+                padding: 6px 10px
+                position: absolute
+                bottom: 8px
+                right: 8px
+            img
+                border-radius: 4px
+                width: 100%
+            &:nth-child(odd)
+                margin-right: 4%
+
+.page_user
+    .mini_profile
+        .avatar
+            border-radius: 50%
+            border: 1.5px solid #2caaff
+            display: block
+            margin: 0px auto
+            width: 150px
+        .info
+            background-color: #ffffff
+            span
+                display: block
+                font-size: 1.1em
+                width: 100%
+            span.title
+                font-weight: bold
+                margin-top: 16px
+        .btn
+            margin-top: 16px
+            width: 100%
+
