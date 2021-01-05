@@ -49,6 +49,8 @@
                                 <a class="nav-link btn dropdown-toggle"  id="mnUser" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">
                                     @if(is_null(Auth::user()->avatar))
                                         <img src="{{ url('/static/images/Default_Avatar.png') }}"/>
+                                    @else
+                                        <img id="img" src="{{ url('/uploads_users/'.Auth::id().'/t_'.Auth::user()->avatar) }}">
                                     @endif
                                     Hola: {{ Auth::user()->name }}
                                 </a>

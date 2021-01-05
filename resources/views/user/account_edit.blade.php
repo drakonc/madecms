@@ -15,7 +15,7 @@
                                 @if(is_null(Auth::user()->avatar))
                                     <img src="{{ url('/static/images/Default_Avatar.png') }}"/>
                                 @else
-                                    <img src="{{ url('/static/images/Default_Avatar.png') }}"/>
+                                    <img id="img" src="{{ url('/uploads_users/'.Auth::id().'/t_'.Auth::user()->avatar) }}" alt="No Imagen">
                                 @endif
                             </a>
                             {!! Form::file('file_avatar',['id'=>'input_file_avatar','class' => 'form-control', 'accept'=>'image/*' , 'required']) !!}
