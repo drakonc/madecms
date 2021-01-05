@@ -23,7 +23,7 @@
                                 @if(is_null($u->avatar) || $u->avatar == "")
                                     <img src="{{ url('/static/images/Default_Avatar.png') }}" class="avatar">
                                 @else
-                                <img src="{{ url('/uploads/user/'.$u->id.'/'.$u->avatar) }}" class="avatar">
+                                    <img src="{{ url('/uploads_users/'.$u->id.'/t_'.$u->avatar) }}" class="avatar">
                                 @endif
                                 <div class="info">
                                     <span class="title"><i class="far fa-address-card"></i> Nombre: </span>
