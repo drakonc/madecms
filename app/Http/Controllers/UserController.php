@@ -37,19 +37,17 @@ class UserController extends Controller
                 $fileExt = trim($request->file('file_avatar')->getClientOriginalExtension());
                 $upload_path = Config::get('filesystems.disks.uploads_users.root');
                 $name = Str::slug(str_replace($fileExt,'',$request->file('file_avatar')->getClientOriginalName()));
-                $filename = rand(1,999).'_av-'.$name.'.'.$fileExt;
+                $filename = rand(1,999).'_avt-'.$name.'.'.$fileExt;
                 $final_file =$upload_path.'/'.$path.'/'.$filename;
                 $fileOld = null;
-                $fileOld_t = null;
 
                 $u = User::findOrFail(Auth::id());
 
                 if(!is_null($u->avatar)):
                     $fileOld = $upload_path.'/'.$path.'/'.$u->avatar;
-                    $fileOld_t = $upload_path.'/'.$path.'/t_'.$u->avatar;
                 endif;
 
-                $u->avatar = $filename;
+                $u->avatar = 'avt_'.$filename;
                 if($u->save()):
                     if($request->hasFile('file_avatar')):
                         $fl = $request->file_avatar->storeAs($path, $filename, 'uploads_users');
@@ -57,10 +55,10 @@ class UserController extends Controller
                         $img->fit(256, 256, function($constraint){
                             $constraint->upsize();
                         });
-                        $img->save($upload_path.'/'.$path.'/t_'.$filename);
-                        if(!is_null($fileOld) && !is_null($fileOld_t)):
+                        $img->save($upload_path.'/'.$path.'/avt_'.$filename);
+                        unlink($final_file);
+                        if(!is_null($fileOld)):
                             unlink($fileOld);
-                            unlink($fileOld_t);
                         endif;
                         return back()->with('message','Avatar Actualizado con Éxito')->with('typealert','success');
                     endif;

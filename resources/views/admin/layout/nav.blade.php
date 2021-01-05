@@ -13,7 +13,7 @@
                     @if(is_null(Auth::user()->avatar))
                         <img src="{{ url('/static/images/Default_Avatar.png') }}"/>
                     @else
-                        <img src="{{ url('/uploads_users/'.Auth::id().'/t_'.Auth::user()->avatar) }}" class="menu_logo">
+                        <img src="{{ url('/uploads_users/'.Auth::id().'/'.Auth::user()->avatar) }}" class="menu_logo">
                     @endif
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">

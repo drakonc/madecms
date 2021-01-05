@@ -50,7 +50,7 @@
                                     @if(is_null(Auth::user()->avatar))
                                         <img src="{{ url('/static/images/Default_Avatar.png') }}"/>
                                     @else
-                                        <img id="img" src="{{ url('/uploads_users/'.Auth::id().'/t_'.Auth::user()->avatar) }}">
+                                        <img id="img" src="{{ url('/uploads_users/'.Auth::id().'/'.Auth::user()->avatar) }}">
                                     @endif
                                     Hola: {{ Auth::user()->name }}
                                 </a>
