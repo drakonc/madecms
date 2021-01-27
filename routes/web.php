@@ -32,3 +32,5 @@ Route::get('/logout',[ConnectController::class,'getLogout'])->name('logout');
 // Module User Actions
 Route::get('/account/edit',[UserController::class,'getAccountEdit'])->name('account_edit');
 Route::post('/account/edit/avatar',[UserController::class,'postAccountEditAvatar'])->name('account_edit_avatar');
+Route::post('/account/edit/password',[UserController::class,'postAccountEditPassword'])->name('account_edit_password');
+Route::post('/account/edit/info',[UserController::class,'postAccountEditInfo'])->name('account_edit_info');

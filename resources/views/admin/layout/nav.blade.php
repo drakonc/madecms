@@ -11,7 +11,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     @if(is_null(Auth::user()->avatar))
-                        <img src="{{ url('/static/images/Default_Avatar.png') }}"/>
+                        <img src="{{ url('/static/images/Default_Avatar.png') }}" class="menu_logo"/>
                     @else
                         <img src="{{ url('/uploads_users/'.Auth::id().'/'.Auth::user()->avatar) }}" class="menu_logo">
                     @endif

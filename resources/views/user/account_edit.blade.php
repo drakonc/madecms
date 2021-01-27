@@ -103,7 +103,7 @@
                                     <span class="input-group-text">
                                         <i class="far fa-envelope-open"></i>
                                     </span>
-                                    {!! Form::email('email', Auth::user()->email, ['id'=>'email','class' => 'form-control','disabled'])!!}
+                                    {!! Form::email('email', Auth::user()->email, ['id'=>'email','class' => 'form-control','disabled','required'])!!}
                                 </div>
                             </div>
                         </div>

@@ -55,27 +55,36 @@ function confirm_object(e) {
     var path = this.getAttribute('data-path');
     var action = this.getAttribute('data-action');
     var url = base + '/' + path + '/' + object + '/' + action
-    var title, text, icon;
+    var title, text, icon, text_buton;
     if (action == 'delete') {
         title = "¿Quiere Eliminar Este Elemento?"
         text = "Recuerda que esta Acción Enviara el Producto a la Papelera";
         icon = "warning";
+        text_buton = "Si, Eliminar";
     }
     if (action == "restore") {
         title = "¿Quiere Restaurara este Elemento?"
         text = "Recuerda que esta Acción Sacara el Elemento de la Papelera";
         icon = "info";
+        text_buton = "Si, Restaurar";
     }
 
-    swal({ title: title, text: text, icon: icon, buttons: true, dangerMode: true })
-        .then((willDelete) => {
-            if (willDelete) {
-                window.location.href = url;
-            }
-            else {
-                swal("Has Canselado La Acción!");
-            }
-        });
+    Swal.fire({
+        title: title,
+        text: text,
+        icon: icon,
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: text_buton
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = url;
+        }
+        else {
+            Swal.fire("Has Canselado La Acción!")
+        }
+    })
 }
 
 /*

@@ -78,7 +78,7 @@
                                         <td>
                                             <div class="opts">
                                                 <a href="{{ url('/admin/category/'.$cat->id.'/edit') }}" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar" @if(!kvfj(Auth::user()->permissions,'category_edit')) hidden @endif><i class="fas fa-edit"></i></a>
-                                                <a href="{{ url('/admin/category/'.$cat->id.'/delete') }}" data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar" class="text-danger" onclick="return confirm('Esta Seguro de Eliminar el Registro?')" @if(!kvfj(Auth::user()->permissions,'category_delete')) hidden @endif><i class="fas fa-trash-alt"></i></a>
+                                                <a href="{{ url('/admin/category/'.$cat->id.'/delete') }}" data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar" class="text-danger btn-confirm" data-object={{ $cat->id}} data-path="admin/category" data-action="delete"  @if(!kvfj(Auth::user()->permissions,'category_delete')) hidden @endif><i class="fas fa-trash-alt"></i></a>
                                             </div>
                                         </td>
                                     </tr>
@@ -90,5 +90,8 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script src="{{ url('/static/js/category.js?v='.time()) }}"></script>
 @endsection
 
