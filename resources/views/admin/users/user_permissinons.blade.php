@@ -28,7 +28,7 @@
                                 <div class="inside">
                                     @foreach ($value['key'] as $k => $v)
                                         <div class="form-check form-switch">
-                                            <input type="checkbox" value="true" name="{{ $k }}" class="form-check-input" id="{{ $k }}" @if(kvfj($u->permissions,$k)) checked @endif>
+                                            <input type="checkbox" value="true" name="{{ $k }}" id="{{ $k }}" class="form-check-input" id="{{ $k }}" @if(kvfj($u->permissions,$k)) checked @endif>
                                             <label for="{{ $k }}" class="form-check-label">{{ $v }}</label>
                                         </div>
                                     @endforeach
@@ -51,5 +51,5 @@
     </div>
 @endsection
 @section('script')
-    <script src="{{ url('/static/js/user.js?v='.time()) }}"></script>
+    <script src="{{ url('/static/js/permissinons.js?v='.time()) }}"></script>
 @endsection

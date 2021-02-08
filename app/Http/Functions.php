@@ -41,16 +41,26 @@ function user_permissions(){
     $p = [
         'dashboard' => [
             'icon' => '<i class="fas fa-home"></i>',
-            'title' => 'Modulo Dashboard',
+            'title' => 'Modulo de Dashboard',
             'key' => [
                 'dashboard' => 'Puede Ver el Dashboard.',
                 'dashboard_small_stats' => 'Puede Ver las Estadisticas Rapidas.',
                 'dashboard_sell_today' => 'Puede Ver lo Facturado Hoy.'
             ]
         ],
+        'categories' => [
+            'icon' => '<i class="fas fa-folder-open"></i>',
+            'title' => 'Modulo de Categorias',
+            'key' => [
+                'categories' => 'Puede Ver el Listado de Categorias.',
+                'category_add' => 'Puede Agregar Nuevas Categorias.',
+                'category_edit' => 'Puede Editar las Categorias.',
+                'category_delete' => 'Puede Eliminar las Categorias.'
+            ]
+        ],
         'products' => [
             'icon' => '<i class="fas fa-boxes"></i>',
-            'title' => 'Modulo Productos',
+            'title' => 'Modulo de Productos',
             'key' => [
                 'products' => 'Puede Ver el Listado de Productos.',
                 'product_search' => 'Puede Buscar Productos.',
@@ -62,24 +72,28 @@ function user_permissions(){
                 'product_galery_delete' => 'Puede Eliminar Imagenes a la Galeria.'
             ]
         ],
-        'categories' => [
-            'icon' => '<i class="fas fa-folder-open"></i>',
-            'title' => 'Modulo Categorias',
+        'orders' => [
+            'icon' => '<i class="fas fa-clipboard-list"></i>',
+            'title' => 'Modulo de Ordenes',
             'key' => [
-                'categories' => 'Puede Ver el Listado de Categorias.',
-                'category_add' => 'Puede Agregar Nuevas Categorias.',
-                'category_edit' => 'Puede Editar las Categorias.',
-                'category_delete' => 'Puede Eliminar las Categorias.'
+                'orders' => 'Puede Ver el Listado de Ordenes.'
             ]
         ],
         'users' => [
             'icon' => '<i class="fas fa-user-friends"></i>',
-            'title' => 'Modulo Usuarios',
+            'title' => 'Modulo de Usuario',
             'key' => [
                 'user_list' => 'Puede Ver el Listado de Usuarios.',
                 'user_edit' => 'Puede Editar Los Usuarios.',
                 'user_permissinons' => 'Puede Dar Permisos a Usuarios.',
                 'user_banned' => 'Puede Bannear a los Usuarios.'
+            ]
+        ],
+        'config' => [
+            'icon' => '<i class="fas fa-cogs"></i>',
+            'title' => 'Modulo de Configuraciones',
+            'key' => [
+                'settings' => 'Puede Modificar la Configuración.'
             ]
         ]
     ];

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
@@ -7,6 +8,10 @@ use App\Http\Controllers\Admin\UserController;
 
 Route::prefix('admin')->group(function(){
     Route::get('/',[DashboardController::class,'getDashboard'])->name('dashboard');
+
+    //Modulo Config
+    Route::get('/settings',[SettingsController::class,'getHome'])->name('settings');
+    Route::post('/settings',[SettingsController::class,'postHome'])->name('settings');
 
     //Module User
     Route::get('/users/{status}',[UserController::class,'getUsers'])->name('user_list');
@@ -35,4 +40,7 @@ Route::prefix('admin')->group(function(){
     Route::get('/category/{id}/edit',[CategoriesController::class,'getCategoryEdit'])->name('category_edit');
     Route::post('/category/{id}/edit',[CategoriesController::class,'postCategoryEdit'])->name('category_edit');
     Route::get('/category/{id}/delete',[CategoriesController::class,'getCategoryDelete'])->name('category_delete');
+
+    //Modulo Orders
+
 });

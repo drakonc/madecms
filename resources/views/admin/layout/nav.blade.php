@@ -2,7 +2,7 @@
     <div class="collapse navbar-collapse d-flex">
         <ul class="navbar-nav w-100">
             <li class="navbar-item">
-                <a class="nav-link" href="{{ url('/') }}">
+                <a class="nav-link" href="{{ url('/') }}" target="_blank">
                     <i class="fas fa-home"></i> MADECMS
                 </a>
             </li>

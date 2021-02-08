@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="{{ url('/static/css/admin.css?v='.time()) }}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap" rel="stylesheet">
-    <title>@yield('title') - Mi Cms</title>
+    <title>@yield('title') - {{ Config::get('madecms.name') }}</title>
 </head>
 <body>
 

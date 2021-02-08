@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="{{ url('/static/css/style.css?v='.time()) }}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap" rel="stylesheet">
-    <title>@yield('title') - MADECMS</title>
+    <title>@yield('title') - {{ Config::get('madecms.name') }}</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
@@ -56,7 +56,7 @@
                                 </a>
                                 <ul class="dropdown-menu shadow" aria-labelledby="mnUser">
                                     @if(Auth::user()->role == 1)
-                                        <li><a class="dropdown-item" href="{{ url('/admin') }}"><i class="fas fa-tachometer-alt"></i>  Dashboard</a></li>
+                                        <li><a class="dropdown-item" href="{{ url('/admin') }}" target="_blank"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                                         <li><hr class="dropdown-divider"></li>
                                     @endif
                                     <li><a class="dropdown-item" href="{{ url('/account/edit')}}"><i class="fas fa-address-card"></i> Editar Información</a></li>
