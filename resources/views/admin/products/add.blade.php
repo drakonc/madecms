@@ -35,7 +35,7 @@
                                     <label for="category">Categoría:</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fas fa-layer-group"></i></span>
-                                        {!! Form::select('category', $cats, null , ['id'=>'category', 'class' => 'custom-select form-control','placeholder' => 'Seleccione una Opción','required']) !!}
+                                        {!! Form::select('category', $cats, null , ['id'=>'category', 'class' => 'form-select','placeholder' => 'Seleccione una Opción','required']) !!}
                                     </div>
                                 </div>
 
