@@ -18,23 +18,23 @@
         <div class="container">
             <a class="navbar-brand" href="{{ url('/')}}"><img src="{{ url('/static/images/madecms_logo2.png') }}" class="img-fluid"/></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <span class="me-auto"></span>
                 <div class="d-flex ml-auto">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{ url('/')}}"><i class="fas fa-home"></i> Inicio</a>
+                            <a class="nav-link" aria-current="page" href="{{ url('/')}}"><i class="fas fa-home"></i> <span>Inicio</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{ url('/store')}}"><i class="fas fa-store-alt"></i> Tienda</a>
+                            <a class="nav-link" aria-current="page" href="{{ url('/store')}}"><i class="fas fa-store-alt"></i> <span>Tienda</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{ url('/')}}"><i class="fas fa-id-card-alt"></i> Sobre Nosotros</a>
+                            <a class="nav-link" aria-current="page" href="{{ url('/')}}"><i class="fas fa-id-card-alt"></i> <span>Sobre Nosotros</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{ url('/')}}"><i class="fas fa-envelope-open"></i> Contacto</a>
+                            <a class="nav-link" aria-current="page" href="{{ url('/')}}"><i class="fas fa-envelope-open"></i> <span>Contacto</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{ url('/car')}}"><i class="fas fa-shopping-cart"></i> <span class="carnumber">0</span></a>

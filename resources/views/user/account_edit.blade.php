@@ -70,7 +70,7 @@
             </div>
         </div>
         <div class="col-md-8">
-            <div class="panel shadow">
+            <div class="panel shadow mtop32 mb-5">
                 <div class="header">
                     <h2 class="title"><i class="fas fa-address-card"></i> Editar Información</h2>
                 </div>

@@ -33,6 +33,14 @@ nav
     .navbar-brand
         img
             width: 200px
+    .navbar-toggler
+        border: none
+        i
+            color: color1 !important
+        &:active
+        &:focus
+            outline: none !important
+            box-shadow: none !important
     .navbar-nav
         li.nav-item
             a.nav-link
@@ -232,4 +240,31 @@ nav
             &:focus
                 box-shadow: none;
                 outline: none;
+
+@media only screen and (max-width 728px)
+    nav
+        .navbar-nav
+            display: block !important
+            margin-top: 16px
+            overflow: hidden
+            li.nav-item
+                display: block
+                float: left
+                margin-bottom: 8px
+                margin-right: 0px
+                width: 50%
+                a.nav-link
+                    text-align: center
+                    span
+                        display: block
+                        font-size: 1em
+                        font-weight: normal
+                        margin-top: 4px
+                        width: 100%
+                    i
+                        font-size: 3em
+                &:last-child
+                    float: inline-end
+                    width: 100%
+
 
