@@ -70,11 +70,11 @@
                                 <td width="50">{{ $p->id }}</td>
                                 <td width="64">
                                     <a href="{{ url('/uploads/'.$p->file_path.'/'.$p->image) }}" data-fancybox="gallery">
-                                        <img src="{{ url('/uploads/'.$p->file_path.'/t_'.$p->image) }}" alt="No Imagen" width="64">
+                                        <img src="{{ url('/uploads/'.$p->file_path.'/t_'.$p->image) }}" alt="No Imagen" width="64" class="img-fluid">
                                     </a>
                                 </td>
                                 <td>{{ $p->name }} @if($p->status == "0") <i class="fas fa-eraser" data-toggle="tooltip" data-placement="top" title="Estado: Borrador"></i>  @endif</td>
-                                <td>{!! htmlspecialchars_decode($p->cat->icono) !!} {{ $p->cat->name }}</td>
+                                <td><img src="{{ url('/uploads/'.$p->cat->file_path.'/'.$p->cat->icono) }}" alt="No Imagen" width="32"> {{ $p->cat->name }}</td>
                                 <td>{{ $p->price }}</td>
                                 <td>
                                     @if(is_null($p->deleted_at))

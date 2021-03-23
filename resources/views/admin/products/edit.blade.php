@@ -39,7 +39,7 @@
                                     <label for="category">Categoría:</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fas fa-layer-group"></i></span>
-                                        {!! Form::select('category', $cats, $product->category_id , ['id'=>'category', 'class' => 'custom-select form-control','placeholder' => 'Seleccione una Opción','required']) !!}
+                                        {!! Form::select('category', $cats, $product->category_id , ['id'=>'category', 'class' => 'form-select','placeholder' => 'Seleccione una Opción','required']) !!}
                                     </div>
                                 </div>
 
@@ -88,7 +88,7 @@
 
                             <div class="row mtop16">
                                 <div class="col-md-3">
-                                    <label for="code">Codío de SIstema:</label>
+                                    <label for="code">Codío de Sistema:</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fab fa-codepen"></i></span>
                                         {!! Form::text('code',  $product->code, ['id'=>'code', 'class' => 'form-control', 'min'=>'0'])!!}

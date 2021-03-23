@@ -17,7 +17,7 @@
                     </div>
                     <div class="inside">
                         @if(kvfj(Auth::user()->permissions,'category_add'))
-                            {!! Form::open(['url'=>'/admin/category/add']) !!}
+                            {!! Form::open(['url'=>'/admin/category/add','files' => true,'autocomplete' => 'off'])!!}
 
                                 <label for="name">Nombre:</label>
                                 <div class="input-group">
@@ -37,10 +37,7 @@
 
                                 <label for="icon" class="mtop16">Ícono:</label>
                                 <div class="input-group">
-                                    <span class="input-group-text">
-                                        <i class="fas fa-icons"></i>
-                                    </span>
-                                    {!! Form::text('icon', null, ['id'=>'icon','class' => 'form-control'])!!}
+                                    {!! Form::file('icon',['id'=>'icon','class' => 'form-control', 'accept'=>'image/*' ,'required']) !!}
                                 </div>
 
                                 {!! Form::submit('Guardar',['class'=>'btn btn-success mtop16']) !!}
@@ -65,7 +62,7 @@
                         <table class="table table-striped mtop16">
                             <thead>
                                 <tr>
-                                    <td width="32"></td>
+                                    <td width="40"></td>
                                     <td>Nombre</td>
                                     <td width="120"></td>
                                 </tr>
@@ -73,7 +70,9 @@
                             <tbody>
                                 @foreach ($cats as $cat)
                                     <tr>
-                                        <td>{!! htmlspecialchars_decode($cat->icono) !!}</td>
+                                        <td>
+                                            <img src="{{ url('/uploads/'.$cat->file_path.'/'.$cat->icono) }}" alt="No Imagen" class="img-fluid"> {{--{!! htmlspecialchars_decode($cat->icono) !!} decodifica codigo html --}}
+                                        </td>
                                         <td>{{ $cat->name }}</td>
                                         <td>
                                             <div class="opts">
