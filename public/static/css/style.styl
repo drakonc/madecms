@@ -6,7 +6,7 @@ color3 = #fdd700
 color4 = #334F9A
 
 body
-    background-color: #f9f9f9
+    background-color: #f4f4f4
     font-size: 14px
     font-family: 'Roboto',sans-serif
 
@@ -241,6 +241,51 @@ nav
                 box-shadow: none;
                 outline: none;
 
+.home_action_bar
+    background-color:#ffffff
+    border-radius: 4px
+    margin-top: 24px
+    padding: 12px
+    .categories
+        position: relative
+        a
+            background-color: #111111
+            border-radius: 4px
+            color: #fff
+            display: block
+            padding: 12px
+            text-decoration: none
+            text-transform: uppercase
+            width: 100%
+            &:hover
+                background-color: color1
+        &:active
+        &:focus
+            a
+                background-color: color1
+        &:hover
+            ul
+                display: block
+        ul
+            display: none
+            list-style: none
+            margin: 0px
+            padding: 0px
+            position: absolute
+            width: 100%
+            li
+                a
+                    background-color: #f8f8f8
+                    color: #111111
+                    border-radius: 0px
+                    img
+                        position: relative
+                        margin-top: -5px
+                        margin-right: 8px
+                        width: 20px
+                    &:hover
+                        color: #ffffff
+
 @media only screen and (max-width 728px)
     nav
         .navbar-nav
@@ -287,6 +332,3 @@ nav
                         width: 36px
                 ul.shadow
                     box-shadow: none !important
-
-
-
