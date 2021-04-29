@@ -245,7 +245,7 @@ nav
     background-color:#ffffff
     border-radius: 4px
     margin-top: 24px
-    padding: 12px
+    padding: 16px
     .categories
         position: relative
         a
@@ -285,6 +285,36 @@ nav
                         width: 20px
                     &:hover
                         color: #ffffff
+    .input-group
+        position: relative
+        i
+            font-size: 1.4em
+            left: 12px
+            position: absolute
+            top: 14px
+            z-index: 10
+        .form-control
+            border-radius: 4px 0px 0px 4px !important
+            padding: 10px 16px
+            padding-left: 42px
+            z-index: 2
+            &:focus
+                border: 1px solid color1
+                &::placeholder
+                    color: color1
+        &:focus-within
+            i
+                color: color1
+            .btn
+                background-color: color1
+                color: #fff
+
+        .btn
+            background-color: #111111
+            color: #fff
+            &:hover
+                background-color: color1
+
 
 @media only screen and (max-width 728px)
     nav

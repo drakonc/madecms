@@ -2,7 +2,7 @@
 @section('title','Inicio')
 @section('content')
 
-    <div class="home_action_bar">
+    <div class="home_action_bar shadow">
         <div class="row">
             <div class="col-md-3">
                 <div class="categories">
@@ -18,6 +18,16 @@
                         @endforeach
                     </ul>
                 </div>
+            </div>
+
+            <div class="col-md-9">
+                {!! Form::open(['url' =>'/search']) !!}
+                    <div class="input-group">
+                        <i class="fas fa-search"></i>
+                        {!! Form::text('search_query',null, ['id'=>'search_query','class' => 'form-control', 'placeholder' => '¿Buscas Algo?', 'required'])!!}
+                        {!! Form::submit('Guardar',['id' =>'Guardar', 'class'=>'btn']) !!}
+                    </div>
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
