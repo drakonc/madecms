@@ -43,11 +43,11 @@ return [
         ],
         'uploads' => [
             'driver' => 'local',
-            'root' => 'C:/xampp/htdocs/madecms/public/uploads'
+            'root' => 'C:/laragon/www/madecms/public/uploads'
         ],
         'uploads_users' => [
             'driver' => 'local',
-            'root' => 'C:/xampp/htdocs/madecms/public/uploads_users'
+            'root' => 'C:/laragon/www/madecms/public/uploads_users'
         ],
         's3' => [
             'driver' => 's3',
