@@ -42,7 +42,7 @@ class ConnectController extends Controller
         if($validator->fails()):
             return back()->withErrors($validator)->with('message','Se Ha Producido Un Herror')->with('typealert','danger');
         else:
-            if( Auth::attempt(['email'=>$request->input('email'),'password'=>$request->input('password')],true)):
+            if( Auth::attempt(['email'=>$request->input('email'),'password'=>$request->input('password')],false)):
                 if(Auth::user()->status == '100' ):
                     return redirect('/logout');
                 else:
