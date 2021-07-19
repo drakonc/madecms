@@ -35,20 +35,7 @@
     </section>
 
     <section>
-        <div class="mdslider">
-            <div class="md-slider-item">
-                1
-            </div>
-            <div class="md-slider-item">
-                2
-            </div>
-            <div class="md-slider-item">
-                3
-            </div>
-            <div class="md-slider-item">
-                4
-            </div>
-        </div>
+        @include('components/slider_home')
     </section>
 
 @endsection

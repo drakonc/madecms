@@ -325,7 +325,7 @@ nav
     width: 100%;
     .md-slider-item
         align-items: center;
-        background-color: #111;
+        background-color: #fff;
         border-radius: 4px;
         border-right: 1px solid #fff
         display: none;
@@ -335,6 +335,42 @@ nav
         position: absolute;
         min-height: 380px;
         width: 100% !important;
+    ul.navigation
+        display: block;
+        margin: 0px;
+        overflow:hidden;
+        padding: 0px;
+        position: absolute;
+        top: calc(50% - 18px);
+        width: 100%;
+        z-index: 9;
+        li
+            display: inline-flex;
+            float: left;
+            a
+                align-items: center;
+                background-color: rgba(0, 0, 0, .5)
+                border-radius:50%
+                color: #fff;
+                display: flex;
+                font-size:1.4em;
+                height 36px;
+                justify-content: center;
+                text-decoration: none;
+                width: 36px;
+            &:first-child
+                margin-left: 32px;
+                a
+                    i
+                        position: relative;
+                        margin-left: -2px;
+            &:last-child
+                float: right;
+                margin-right: 32px;
+                a
+                    i
+                        position: relative;
+                        margin-right: -2px;
 
 @media only screen and (max-width 728px)
     nav
