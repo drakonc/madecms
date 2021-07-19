@@ -1,5 +1,6 @@
 var base = location.protocol + '//' + location.host;
 var router = document.getElementsByName('routeName')[0].getAttribute('content')
+var slider = new MDSlider;
 
 function LinkInputFileOpen(link_img, button_img, frm_img) {
     var lnk_img = document.getElementById(link_img);
@@ -20,4 +21,5 @@ document.addEventListener('DOMContentLoaded', function () {
     if (router == 'account_edit') {
         LinkInputFileOpen('lnk_avatar_edit', 'input_file_avatar', 'form_avatar_edit')
     }
+    slider.show();
 })
