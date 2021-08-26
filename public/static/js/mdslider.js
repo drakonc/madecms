@@ -3,7 +3,9 @@ class MDSlider {
     constructor(){
         this.init();
         this.slider_active = 0;
-        this.elements = 0;
+        this.items =  document.getElementsByClassName('md-slider-item');
+        this.elements = this.items.length - 1;
+        this.automatic();
     }
 
     init(){
@@ -15,19 +17,46 @@ class MDSlider {
 
     show() {
         var pos,i;
-        var items =  document.getElementsByClassName('md-slider-item');
-        this.elements = items.length;
-        for (i = 0; i < items.length; i++) {
+        for (i = 0; i < this.items.length; i++) {
             pos = i * 100;
-            items[i].style.left = pos+'%';
-            items[i].style.display = 'flex';
+            this.items[i].style.left = pos+'%';
+            this.items[i].style.display = 'flex';
         }
-
-        console.log(`Slider Activo: ${this.slider_active} - Total Slider: ${this.elements}`);
     }
 
     navigation(action) {
-        console.log(action);
+        if(action == "prew"){
+            if(this.slider_active > "0"){
+                this.slider_active = this.slider_active - 1;
+                var i,pos;
+                for (i = 0; i < this.items.length; i++) {
+                    pos = parseInt(this.items[i].style.left) + 100;
+                    this.items[i].style.left = pos+'%';
+                }
+            }
+        }
+
+        if(action == "next"){
+            if(this.slider_active < this.elements){
+                this.slider_active = this.slider_active + 1;
+                var i,pos;
+                for (i = 0; i < this.items.length; i++) {
+                    pos = parseInt(this.items[i].style.left) - 100;
+                    this.items[i].style.left = pos+'%';
+                }
+            }
+        }
+    }
+
+    automatic(){
+        setInterval(() => {
+            if(this.slider_active < this.elements){
+               this.navigation("next");
+            }else{
+                this.show();
+                this.slider_active = 0;
+            }
+        },10000);
     }
 
 }
