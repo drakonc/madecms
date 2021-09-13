@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UserController;
 
 Route::prefix('admin')->group(function(){
@@ -41,6 +42,8 @@ Route::prefix('admin')->group(function(){
     Route::post('/category/{id}/edit',[CategoriesController::class,'postCategoryEdit'])->name('category_edit');
     Route::get('/category/{id}/delete',[CategoriesController::class,'getCategoryDelete'])->name('category_delete');
 
-    //Modulo Orders
+    //Modulo Slider
+    Route::get('/sliders',[SliderController::class,'getHome'])->name('sliders_list');
+    Route::post('/slider/add',[SliderController::class,'getSliderAdd'])->name('slider_add');
 
 });

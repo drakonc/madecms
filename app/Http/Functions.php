@@ -16,7 +16,7 @@ function kvfj($json, $key){
 
 function getModulesArray(){
     $a =['0' => 'Productos','1' => 'Blog'];
-     return $a;
+    return $a;
 }
 
 function getRoleUserArray($mode,$id){
@@ -89,6 +89,14 @@ function user_permissions(){
                 'user_banned' => 'Puede Bannear a los Usuarios.'
             ]
         ],
+        'sider' => [
+            'icon' => '<i class="fas fa-images"></i>',
+            'title' => 'Modulo de Sliders',
+            'key' => [
+                'sliders_list' => 'Puede Ver La Lista de Los Sliders.',
+                'slider_add' => 'Puede Crear Sliders.',
+            ]
+            ],
         'config' => [
             'icon' => '<i class="fas fa-cogs"></i>',
             'title' => 'Modulo de Configuraciones',
