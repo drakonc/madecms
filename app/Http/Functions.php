@@ -95,6 +95,8 @@ function user_permissions(){
             'key' => [
                 'sliders_list' => 'Puede Ver La Lista de Los Sliders.',
                 'slider_add' => 'Puede Crear Sliders.',
+                'slider_edit' => 'Puede Editar Sliders.',
+                'slider_delete' => 'Puede Eliminar Sliders.',
             ]
             ],
         'config' => [

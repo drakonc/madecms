@@ -17,7 +17,9 @@ class SliderController extends Controller
     }
 
     public function getHome(){
-        return view('admin.slider.home');
+        $sliders = Slider::orderBy('sorder','Asc')->get();
+        $data = ['sliders'=>$sliders];
+        return view('admin.slider.home',$data);
     }
 
     public function postSliderAdd(Request $request){
@@ -62,6 +64,56 @@ class SliderController extends Controller
             else:
                 return back()->with('message','Error al Guerdar los Datos')->with('typealert','danger');
             endif;
+        endif;
+    }
+
+    public function getSliderEdit($id){
+        $slider = Slider::findOrFail($id);
+        $data = ['slider'=>$slider];
+        return view('admin.slider.edit',$data);
+    }
+
+    public function postSliderEdit(Request $request, $id){
+
+        $rules = [
+            'name' => 'required',
+            'content' => 'required',
+            'order' => 'required'
+        ];
+
+        $messages = [
+            'name.required' => 'El Nombre es un Campo Requerido.',
+            'content.required' => 'El Contenido es un Campo Requerido.',
+            'order.required' => 'El Orden es un Campo Requerido.'
+        ];
+
+        $validator = Validator::make($request->all(),$rules,$messages);
+
+        if($validator->fails()):
+            return back()->withErrors($validator)->with('message','Se Ha Producido Un Herror')->with('typealert','danger')->withInput();
+        else:
+            $slider = Slider::find($id);
+            $slider->status = $request->input('visible');
+            $slider->name = e($request->input('name'));
+            $slider->content = e($request->input('content'));
+            $slider->sorder =e($request->input('order'));
+            if($slider->save()):
+                return back()->with('message','Guardado con Éxito')->with('typealert','success');
+            else:
+                return back()->with('message','Error al Guerdar los Datos')->with('typealert','danger');
+            endif;
+        endif;
+    }
+
+    public function getSliderDelete($id){
+        $slider = Slider::findOrFail($id);
+        $upload_path = Config::get('filesystems.disks.uploads.root');
+        if($slider->delete()):
+            $file = $upload_path.'/'.$slider->file_path.'/'.$slider->file_name;
+            unlink($file);
+            return back()->with('message','Slider Eliminado con Éxito')->with('typealert','success');
+        else:
+            return back()->with('message','Error al Eliminar los Datos')->with('typealert','danger');
         endif;
     }
 }
