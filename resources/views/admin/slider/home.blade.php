@@ -24,7 +24,7 @@
                                     <span class="input-group-text">
                                         <i class="far fa-keyboard"></i>
                                     </span>
-                                    {!! Form::text('name', null, ['id'=>'name','class' => 'form-control','required'])!!}
+                                    {!! Form::text('name', null, ['id'=>'name','class' => 'form-control'])!!}
                                 </div>
 
                                 <label for="visible" class="mtop16">Visible:</label>
@@ -37,7 +37,7 @@
 
                                 <label for="img" class="mtop16">Imagen Destacada:</label>
                                 <div class="input-group">
-                                    {!! Form::file('img',['id'=>'img','class' => 'form-control', 'accept'=>'image/*' ,'required']) !!}
+                                    {!! Form::file('img',['id'=>'img','class' => 'form-control', 'accept'=>'image/*' ]) !!}
                                 </div>
                                 
                                 <label for="content" class="mtop16">Contenido:</label>
@@ -45,7 +45,7 @@
                                     <span class="input-group-text">
                                         <i class="far fa-keyboard"></i>
                                     </span>
-                                    {!! Form::textarea('content', null, ['id'=>'content','class' => 'form-control', 'rows' => '3', 'required'])!!}
+                                    {!! Form::textarea('content', null, ['id'=>'content','class' => 'form-control', 'rows' => '3'])!!}
                                 </div>
 
                                 <label for="order" class="mtop16">Orden Aparición:</label>
@@ -53,7 +53,7 @@
                                     <span class="input-group-text">
                                         <i class="far fa-keyboard"></i>
                                     </span>
-                                    {!! Form::number('order', null, ['id'=>'order','class' => 'form-control', 'min' => '0', 'required'])!!}
+                                    {!! Form::number('order', 0, ['id'=>'order','class' => 'form-control', 'min' => '0'])!!}
                                 </div>
 
                                 {!! Form::submit('Guardar',['class'=>'btn btn-success mtop16']) !!}

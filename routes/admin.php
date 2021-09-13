@@ -44,6 +44,6 @@ Route::prefix('admin')->group(function(){
 
     //Modulo Slider
     Route::get('/sliders',[SliderController::class,'getHome'])->name('sliders_list');
-    Route::post('/slider/add',[SliderController::class,'getSliderAdd'])->name('slider_add');
+    Route::post('/slider/add',[SliderController::class,'postSliderAdd'])->name('slider_add');
 
 });

@@ -59,7 +59,7 @@ class ProductController extends Controller
             'content'=> 'required'
           ];
 
-          $messages = [
+        $messages = [
             'name.required' => 'EL Nombre del Producto es Requerido',
             'img.required' => 'Seleccione una Imagen Destacada',
             'img.image' => 'El Archivo no es una Imagen',
