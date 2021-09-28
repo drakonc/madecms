@@ -108,6 +108,6 @@
         </div>
     </div>
 @endsection
-{@section('script')
+@section('script')
     <script src="{{ url('/static/js/slider.js?v='.time()) }}"></script>
 @endsection
