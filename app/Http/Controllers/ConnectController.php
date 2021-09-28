@@ -94,7 +94,7 @@ class ConnectController extends Controller
             $user->avatar = null;
 
             if($user->save()):
-                return redirect('/login')->with('message','Su Usuario se Creó con Éxito, ahora puede Iniciar Sesión.')->with('typealert','success');;
+                return redirect('/login')->with('message','Su Usuario se Creó con Éxito, ahora puede Iniciar Sesión.')->with('typealert','success');
             endif;
 
         endif;
@@ -142,7 +142,7 @@ class ConnectController extends Controller
                 $user = User::where('email',$request->input('email'))->first();
                 $user->password = Hash::make($request->input('password'));
                 if($user->save()):
-                    return redirect('/login')->with('message','Su Contraseña se Restauro con Éxito, ahora puede Iniciar Sesión.')->with('typealert','success');;
+                    return redirect('/login')->with('message','Su Contraseña se Restauro con Éxito, ahora puede Iniciar Sesión.')->with('typealert','success');
                 else:
                     return back()->withErrors($validator)->with('message','Ocurrio un Error al tratar de Restaurara la Contraseña')->with('typealert','danger')->withInput();
                 endif;
