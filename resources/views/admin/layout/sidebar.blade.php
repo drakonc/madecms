@@ -30,7 +30,7 @@
                 <a href="{{url('/admin/users/all')}}" class="lk-user_list lk-user_edit lk-user_permissinons"><i class="fas fa-user-friends"></i> Usuarios</a>
             </li>
             <li @if(!kvfj(Auth::user()->permissions,'sliders_list')) hidden @endif>
-                <a href="{{url('/admin/sliders')}}" class="lk-sliders_list"><i class="fas fa-images"></i> Sliders</a>
+                <a href="{{url('/admin/sliders')}}" class="lk-sliders_list lk-slider_edit"><i class="fas fa-images"></i> Sliders</a>
             </li>
             <li @if(!kvfj(Auth::user()->permissions,'settings')) hidden @endif>
                 <a href="{{url('/admin/settings')}}" class="lk-settings"><i class="fas fa-cogs"></i> Configuraciones</a>
