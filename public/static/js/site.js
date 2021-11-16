@@ -1,5 +1,8 @@
-var base = location.protocol + '//' + location.host;
-var router = document.getElementsByName('routeName')[0].getAttribute('content')
+const base = location.protocol + '//' + location.host;
+const router = document.getElementsByName('routeName')[0].getAttribute('content')
+const http = new XMLHttpRequest();
+const csrfToken = document.getElementsByName('csrf-token')[0].getAttribute('content')
+
 var slider = new MDSlider;
 
 function LinkInputFileOpen(link_img, button_img, frm_img) {
@@ -22,4 +25,23 @@ document.addEventListener('DOMContentLoaded', function () {
         LinkInputFileOpen('lnk_avatar_edit', 'input_file_avatar', 'form_avatar_edit')
     }
     slider.show();
-})
+    if (router == 'home') {
+     load_products('home');
+    }
+});
+
+function load_products(section){
+    var url = `${base}/md/api/load/products/${section}`;
+    http.open('GET', url, true);
+    http.setRequestHeader('X-CSRF-TOKEN', csrfToken);
+    http.send();
+    http.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var result = JSON.parse(this.responseText);
+            console.log(result.data);
+        }else {
+            // Mensaje de error
+        }
+    }
+
+}
