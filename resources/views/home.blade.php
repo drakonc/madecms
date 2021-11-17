@@ -38,4 +38,12 @@
         @include('components/slider_home')
     </section>
 
+    <section>
+        <div class="container pt-5">
+            <div class="products_list" id="products_list">
+
+            </div>
+        </div>
+    </section>
+
 @endsection

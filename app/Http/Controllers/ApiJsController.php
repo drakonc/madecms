@@ -15,7 +15,7 @@ class ApiJsController extends Controller
                 $products = Product::inRandomOrder()->where('status','=',1)->paginate($items_x_page);
                 break;
             default:
-                $products = Product::inRandomOrder()->paginate($items_x_page);
+                $products = Product::inRandomOrder()->where('status','=',1)->paginate($items_x_page);
         endswitch;
         return response()->json($products);
     }

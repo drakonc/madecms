@@ -2,6 +2,7 @@ const base = location.protocol + '//' + location.host;
 const router = document.getElementsByName('routeName')[0].getAttribute('content')
 const http = new XMLHttpRequest();
 const csrfToken = document.getElementsByName('csrf-token')[0].getAttribute('content')
+const currency = document.getElementsByName('currency')[0].getAttribute('content')
 
 var slider = new MDSlider;
 
@@ -26,19 +27,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     slider.show();
     if (router == 'home') {
-     load_products('home');
+        load_products('home');
     }
 });
 
 function load_products(section){
-    var url = `${base}/md/api/load/products/${section}`;
+    var products_list = document.getElementById('products_list');
+    var url = `${base}/api/md/load/products/${section}`;
     http.open('GET', url, true);
     http.setRequestHeader('X-CSRF-TOKEN', csrfToken);
     http.send();
     http.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var result = JSON.parse(this.responseText);
-            console.log(result.data);
+            result.data.forEach(function (product, index) {
+                var div = `<div class="product">
+                            <img class="img-fluid" src="${base}/uploads/${product.file_path}/t_${product.image}" />
+                            <div class="title">${product.name}</div>
+                            <div class="proce">${currency}${product.price}</div>
+                            <div class="options"></div>
+                        </div>`;
+                products_list.innerHTML += div;
+            })
         }else {
             // Mensaje de error
         }
