@@ -416,26 +416,69 @@ nav
         float: left;
         margin-bottom: 24px;
         margin-right: 2.5%;
+        position: relative;
         width: 18%;
         &:nth-child(5n)
             margin-right: 0;
+        .image
+            display: block;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            .overlay
+                background-color: rgba(0,0,0,.5);
+                border-radius: 6px;
+                display: none;
+                flex: 1;
+                height: 100%
+                position: absolute;
+                transition: .3s all ease-in-out;
+                width: 100%;
+                z-index: 9;
+                .btns
+                    bottom: 8px;
+                    display: block;
+                    overflow: hidden;
+                    left: 3%
+                    position: absolute;
+                    width: 94%;
+                    a
+                        background-color: #fff;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                        color: color2;
+                        display: block;
+                        font-size: 1.2em;
+                        float: left;
+                        margin-right: 2%;
+                        text-align: center;
+                        width: 32%;
+                        &:last-child
+                            margin-right: 0px;
+            img
+                border-radius: 6px;
+                display: block;
+                width: 100%;
+                transform: scale(1);
+                transition: .3s all ease-in-out;
+                z-index: 4;
+        &:hover
+            .image
+                img
+                    transform: scale(1.1);
+                .overlay
+                    cursor: pointer;
+                    display: flex;
         a
             display: block;
             text-decoration: none;
+            position: relative
             width: 100%;
-            .image
             .title
             .price
             .options
                 display: block;
                 width: 100%;
-            .image
-                img
-                    border-radius: 6px;
-                    display: block;
-                    width: 100%;
-                    transform: scale(1);
-                    transition: .1s all ease-in-out;
             .title
                 color: #111111;
                 font-size: 1.2em;
@@ -444,11 +487,7 @@ nav
                 color: #111111;
                 font-size: 1.4em;
                 font-weight: bold;
-                margin-top: 4px
-            &:hover
-                .image
-                    img
-                        transform: scale(1.1);
+                margin-top: 4px;
 
 @media only screen and (max-width 728px)
     nav

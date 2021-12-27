@@ -4,7 +4,6 @@ const http = new XMLHttpRequest();
 const csrfToken = document.getElementsByName('csrf-token')[0].getAttribute('content')
 const currency = document.getElementsByName('currency')[0].getAttribute('content')
 
-var slider = new MDSlider;
 
 function LinkInputFileOpen(link_img, button_img, frm_img) {
     var lnk_img = document.getElementById(link_img);
@@ -22,6 +21,9 @@ function LinkInputFileOpen(link_img, button_img, frm_img) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+   
+    var slider = new MDSlider;
+
     if (router == 'account_edit') {
         LinkInputFileOpen('lnk_avatar_edit', 'input_file_avatar', 'form_avatar_edit')
     }
@@ -42,8 +44,17 @@ function load_products(section){
             var result = JSON.parse(this.responseText);
             result.data.forEach(function (product, index) {
                 var div = `<div class="product">
+                            <div class="image">
+                                <div class="overlay">
+                                    <div class="btns">
+                                        <a href="{base}/product/${product.id}/${product.slug}" data-bs-toggle="tooltip" data-bs-placement="top" title="Ver"><i class="fas fa-eye"></i></a>
+                                        <a href="" data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir"><i class="fas fa-cart-plus"></i></a>
+                                        <a href="" data-bs-toggle="tooltip" data-bs-placement="top" title="Me Gusta"><i class="fas fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <img src="${base}/uploads/${product.file_path}/t_${product.image}" />
+                            </div>
                             <a href="${base}/product/${product.id}/${product.slug}">
-                                <div class="image"><img src="${base}/uploads/${product.file_path}/t_${product.image}" /></div>
                                 <div class="title">${product.name}</div>
                                 <div class="price">${currency}${product.price}</div>
                                 <div class="options"></div>
