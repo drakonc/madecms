@@ -42,10 +42,12 @@ function load_products(section){
             var result = JSON.parse(this.responseText);
             result.data.forEach(function (product, index) {
                 var div = `<div class="product">
-                            <img class="img-fluid" src="${base}/uploads/${product.file_path}/t_${product.image}" />
-                            <div class="title">${product.name}</div>
-                            <div class="proce">${currency}${product.price}</div>
-                            <div class="options"></div>
+                            <a href="${base}/product/${product.id}/${product.slug}">
+                                <div class="image"><img src="${base}/uploads/${product.file_path}/t_${product.image}" /></div>
+                                <div class="title">${product.name}</div>
+                                <div class="price">${currency}${product.price}</div>
+                                <div class="options"></div>
+                            </a>
                         </div>`;
                 products_list.innerHTML += div;
             })
