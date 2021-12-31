@@ -3,6 +3,8 @@ const router = document.getElementsByName('routeName')[0].getAttribute('content'
 const http = new XMLHttpRequest();
 const csrfToken = document.getElementsByName('csrf-token')[0].getAttribute('content')
 const currency = document.getElementsByName('currency')[0].getAttribute('content')
+var page = 1;
+var page_section = ""
 
 
 function LinkInputFileOpen(link_img, button_img, frm_img) {
@@ -21,12 +23,21 @@ function LinkInputFileOpen(link_img, button_img, frm_img) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-   
+    
     var slider = new MDSlider;
-
+    var load_more_products = document.getElementById('load_more_products');
+    
     if (router == 'account_edit') {
         LinkInputFileOpen('lnk_avatar_edit', 'input_file_avatar', 'form_avatar_edit')
     }
+    if(load_more_products){
+        load_more_products.addEventListener('click', function (e) {
+            e.preventDefault();
+            load_products(page_section);
+        })
+    }
+    
+    
     slider.show();
     if (router == 'home') {
         load_products('home');
@@ -34,14 +45,21 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function load_products(section){
+    page_section = section;
     var products_list = document.getElementById('products_list');
-    var url = `${base}/api/md/load/products/${section}`;
+    var url = `${base}/api/md/load/products/${page_section}?page=${page}`;
     http.open('GET', url, true);
     http.setRequestHeader('X-CSRF-TOKEN', csrfToken);
     http.send();
     http.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+            page = page + 1;
             var result = JSON.parse(this.responseText);
+
+            if (result.data.length == 0) {
+                load_more_products.style.display = 'none';
+            }
+            
             result.data.forEach(function (product, index) {
                 var div = `<div class="product">
                             <div class="image">
