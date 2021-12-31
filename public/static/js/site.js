@@ -47,7 +47,7 @@ function load_products(section){
                             <div class="image">
                                 <div class="overlay">
                                     <div class="btns">
-                                        <a href="{base}/product/${product.id}/${product.slug}" data-bs-toggle="tooltip" data-bs-placement="top" title="Ver"><i class="fas fa-eye"></i></a>
+                                        <a href="${base}/product/${product.id}/${product.slug}" data-bs-toggle="tooltip" data-bs-placement="top" title="Ver"><i class="fas fa-eye"></i></a>
                                         <a href="" data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir"><i class="fas fa-cart-plus"></i></a>
                                         <a href="" data-bs-toggle="tooltip" data-bs-placement="top" title="Me Gusta"><i class="fas fa-heart"></i></a>
                                     </div>
