@@ -60,6 +60,7 @@
                                         <li><a class="dropdown-item" href="{{ url('/admin') }}" target="_blank"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                                         <li><hr class="dropdown-divider"></li>
                                     @endif
+                                    <li><a class="dropdown-item" href="{{ url('/account/favorites')}}"><i class="fas fa-heart"></i> Favoritos</a></li>
                                     <li><a class="dropdown-item" href="{{ url('/account/edit')}}"><i class="fas fa-address-card"></i> Editar Información</a></li>
                                     <li><a class="dropdown-item" href="{{ url('/logout')}}"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
                                 </ul>

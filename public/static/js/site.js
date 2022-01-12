@@ -67,7 +67,7 @@ function load_products(section){
                                     <div class="btns">
                                         <a href="${base}/product/${product.id}/${product.slug}" data-bs-toggle="tooltip" data-bs-placement="top" title="Ver"><i class="fas fa-eye"></i></a>
                                         <a href="" data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir"><i class="fas fa-cart-plus"></i></a>
-                                        <a href="" data-bs-toggle="tooltip" data-bs-placement="top" title="Me Gusta"><i class="fas fa-heart"></i></a>
+                                        <a href="#" onclick="add_to_favorites(${product.id}, '1');  return false" data-bs-toggle="tooltip" data-bs-placement="top" title="Me Gusta"><i class="fas fa-heart"></i></a>
                                     </div>
                                 </div>
                                 <img src="${base}/uploads/${product.file_path}/t_${product.image}" />
@@ -85,4 +85,9 @@ function load_products(section){
         }
     }
 
+}
+
+function add_to_favorites(object_id, module){
+    url = `${base}/api/md/favorites/add/${object_id}/${module}`;
+    console.log(url);
 }
