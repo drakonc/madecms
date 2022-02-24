@@ -80,8 +80,6 @@ function load_products(section){
                         </div>`;
                 products_list.innerHTML += div;
             })
-        }else {
-            // Mensaje de error
         }
     }
 
@@ -89,5 +87,13 @@ function load_products(section){
 
 function add_to_favorites(object_id, module){
     url = `${base}/api/md/favorites/add/${object_id}/${module}`;
-    console.log(url);
+    http.open('POST', url, true);
+    http.setRequestHeader('X-CSRF-TOKEN', csrfToken);
+    http.send();
+    http.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            console.log(data);
+        }
+    }
 }

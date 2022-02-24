@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Validator,Hash,Auth,Mail,PDF;
-use App\Mail\UserSendRecover;
-use Illuminate\Http\Request;
+
 use App\Models\User;
-use Cookie;
+use Barryvdh\DomPDF\PDF;
+use Illuminate\Http\Request;
+use App\Mail\UserSendRecover;
+use Illuminate\Support\Facades\{Config, Auth,Validator,Hash,Mail,Cookie};
 
 class ConnectController extends Controller
 {

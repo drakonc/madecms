@@ -37,4 +37,4 @@ Route::post('/account/edit/password',[UserController::class,'postAccountEditPass
 Route::post('/account/edit/info',[UserController::class,'postAccountEditInfo'])->name('account_edit_info');
 
 // Ajax Api Routers
-Route::get('/md/api/load/products/{section}',[ApiJsController::class,'getProductsSection']);
+Route::post('api/md/favorites/add/{object}/{module}',[ApiJsController::class,'postFavoriteAdd']);
