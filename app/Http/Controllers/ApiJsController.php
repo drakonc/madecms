@@ -26,12 +26,16 @@ class ApiJsController extends Controller
     public function postFavoriteAdd($object, $module){
         $query = Favorite::where('user_id',Auth::id())->where('module',$module)->where('object_id',$object)->count();
         if($query > 0):
-            $result = Favorite::where('user_id',Auth::id())->where('module',$module)->where('object_id',$object)->get();
-            if($result->delete()):
-                $data = ['status' => 'success', 'msg' => 'Se quito de Favoritos'];
-            else:
-                $data = ['status' => 'error', 'msg' => 'Error al quitar de favorito'];
-            endif;
+            $data = ['status' => 'error', 'msg' => 'Este Item ya Esta en favoritos'];
+            // TODO: Codigo para desmarcar favoritos -> no esta en el tutorial 
+            /*
+             * $result = Favorite::where('user_id',Auth::id())->where('module',$module)->where('object_id',$object)->first();
+             * if($result->delete()):
+             *    $data = ['status' => 'success', 'msg' => 'Se quito de Favoritos'];
+             * else:
+             *   $data = ['status' => 'error', 'msg' => 'Error al quitar de favorito'];
+             * endif;
+            */
         else:
             $favorite = new Favorite;
             $favorite->user_id = Auth::id();
