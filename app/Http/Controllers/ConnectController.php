@@ -102,9 +102,11 @@ class ConnectController extends Controller
 
     }
 
-    public function getLogout(){
+    public function getLogout(Request $request){
         $status = Auth::user()->status;
         Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
         if($status == '100' ):
             return redirect('/login')->with('message','Su Usuario Fue Suspendido.')->with('typealert','danger');
         else:
