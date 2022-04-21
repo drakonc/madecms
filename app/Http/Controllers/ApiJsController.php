@@ -16,7 +16,7 @@ class ApiJsController extends Controller
         switch($section):
             case 'home':
                 $products = Product::inRandomOrder()->where('status','=',1)->paginate($items_x_page);
-                break;
+                break; 
             default:
                 $products = Product::inRandomOrder()->where('status','=',1)->paginate($items_x_page);
         endswitch;
@@ -29,12 +29,12 @@ class ApiJsController extends Controller
             $data = ['status' => 'error', 'msg' => 'Este Item ya Esta en favoritos'];
             // TODO: Codigo para desmarcar favoritos -> no esta en el tutorial 
             /*
-             * $result = Favorite::where('user_id',Auth::id())->where('module',$module)->where('object_id',$object)->first();
-             * if($result->delete()):
-             *    $data = ['status' => 'success', 'msg' => 'Se quito de Favoritos'];
-             * else:
-             *   $data = ['status' => 'error', 'msg' => 'Error al quitar de favorito'];
-             * endif;
+            * $result = Favorite::where('user_id',Auth::id())->where('module',$module)->where('object_id',$object)->first();
+            * if($result->delete()):
+            *    $data = ['status' => 'remove', 'msg' => 'Se quito de Favoritos'];
+            * else:
+            *    $data = ['status' => 'error', 'msg' => 'Error al quitar de favorito'];
+            * endif;
             */
         else:
             $favorite = new Favorite;
