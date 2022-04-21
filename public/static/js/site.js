@@ -3,9 +3,9 @@ const router = document.getElementsByName('routeName')[0].getAttribute('content'
 const http = new XMLHttpRequest();
 const csrfToken = document.getElementsByName('csrf-token')[0].getAttribute('content')
 const currency = document.getElementsByName('currency')[0].getAttribute('content')
+const auth = document.getElementsByName('auth')[0].getAttribute('content')
 var page = 1;
 var page_section = ""
-
 
 function LinkInputFileOpen(link_img, button_img, frm_img) {
     var lnk_img = document.getElementById(link_img);
@@ -66,9 +66,13 @@ function load_products(section){
                                 <div class="overlay">
                                     <div class="btns">
                                         <a href="${base}/product/${product.id}/${product.slug}" data-bs-toggle="tooltip" data-bs-placement="top" title="Ver"><i class="fas fa-eye"></i></a>
-                                        <a href="" data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir"><i class="fas fa-cart-plus"></i></a>
-                                        <a href="#" onclick="add_to_favorites(${product.id}, '1');  return false" data-bs-toggle="tooltip" data-bs-placement="top" title="Me Gusta"><i class="fas fa-heart"></i></a>
-                                    </div>
+                                        <a href="" data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir"><i class="fas fa-cart-plus"></i></a>`
+                                        if(auth == "1"){
+                                            div += `<a href="#" id="favorite_1_${product.id}" onclick="add_to_favorites(${product.id}, '1');  return false" data-bs-toggle="tooltip" data-bs-placement="top" title="Me Gusta"><i class="fas fa-heart"></i></a>`
+                                        }else{
+                                            div += `<a href="#" id="favorite_1_${product.id}" onclick="Sweetalert()" return false" data-bs-toggle="tooltip" data-bs-placement="top" title="Me Gusta"><i class="fas fa-heart"></i></a>`
+                                        }                                        
+                div +=              `</div>
                                 </div>
                                 <img src="${base}/uploads/${product.file_path}/t_${product.image}" />
                             </div>
@@ -94,6 +98,22 @@ function add_to_favorites(object_id, module){
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.responseText);
             console.log(data);
+            if(data.status == "success") {
+                document.getElementById(`favorite_${module}_${object_id}`).classList.add("favorite_active");
+            }
+            if(data.status == "remove") {
+                document.getElementById(`favorite_${module}_${object_id}`).classList.remove("favorite_active");
+            }
         }
     }
 }
+
+function Sweetalert() {
+    Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Para Agregar a favoritos Necesitas estar logeado',
+        footer: `<a href="${base}/login">Iniciar Sesión</a>`
+    })
+}
+
