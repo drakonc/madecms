@@ -19,7 +19,7 @@
                     {!! Form::email('email', null, ['id'=>'email','class' => 'form-control','required'])!!}
                 </div>
 
-                <label for="password">Contraseña:</label>
+                {{-- <label for="password">Contraseña:</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
                     {!! Form::password('password', ['id'=>'password','class' => 'form-control','required'])!!}
@@ -29,7 +29,7 @@
                 <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
                     {!! Form::password('cpassword', ['id'=>'cpassword','class' => 'form-control','required'])!!}
-                </div>
+                </div> --}}
 
                 {!! Form::submit('Recuperar Contraseña',['class' => 'btn btn-success mtop16']) !!}
 

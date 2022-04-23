@@ -120,19 +120,12 @@ class ConnectController extends Controller
 
     public function postRecover(Request $request){
         $rules = [
-            'email' => 'required|email',
-            'password' => 'required|min:8',
-            'cpassword' => 'required|min:8|same:password'
+            'email' => 'required|email'
         ];
 
         $messages = [
             'email.required' => 'Su Correo Electrónico es Requerido.',
-            'email.email' => 'El Formato de su Correo Electrónico es Invalido.',
-            'password.required' => 'Por Favor Escriba una Contraseña.',
-            'password.min' => 'La Contraseña Debe Tener al Menos 8 Caracteres.',
-            'cpassword.required' => 'Es Necesario Confirmar la Contraseña.',
-            'cpassword.min' => ' La Confirmación de la Contraseña Debe Tener al Menos 8 Caracteres.',
-            'cpassword.same' => 'La Contraseñas No Coinciden.',
+            'email.email' => 'El Formato de su Correo Electrónico es Invalido.'
         ];
 
         $validator = Validator::make($request->all(),$rules,$messages);
@@ -143,15 +136,18 @@ class ConnectController extends Controller
             $user = User::where('email',$request->input('email'))->count();
             if($user == '1'):
                 $user = User::where('email',$request->input('email'))->first();
-                $user->password = Hash::make($request->input('password'));
-                if($user->save()):
-                    return redirect('/login')->with('message','Su Contraseña se Restauro con Éxito, ahora puede Iniciar Sesión.')->with('typealert','success');
-                else:
-                    return back()->withErrors($validator)->with('message','Ocurrio un Error al tratar de Restaurara la Contraseña')->with('typealert','danger')->withInput();
+                $code = rand(100000,999999);
+                $data = ['name' => $user->name, 'email' => $user->email, 'code' => $code];
+                $u = User::find($user->id);
+                $u->password_code = $code;
+                if($u->save()):
+                    Mail::to($user->email)->send(new UserSendRecover($data));
+                    return redirect('/reset?email='.$user->email)->with('message','Ingrese el codigo enviado a su correo Electronico')->with('typealert','success');
                 endif;
             else:
                 return back()->withErrors($validator)->with('message','Este Correo Electronico No Existe')->with('typealert','danger')->withInput();
             endif;
+
         endif;
     }
 

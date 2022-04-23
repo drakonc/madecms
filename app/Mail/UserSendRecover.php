@@ -21,7 +21,7 @@ class UserSendRecover extends Mailable
 
     public function __construct($data)
     {
-        $this->dara = $data;
+        $this->data = $data;
     }
 
     /**
@@ -32,11 +32,8 @@ class UserSendRecover extends Mailable
     public function build()
     {
         return $this->from(env('MAIL_FROM'),env('APP_NAME'))
-                    ->view('pruebaPDF')
-                    ->subject('Recuperar su Contraseña');
-        /*return $this->from(env('MAIL_FROM'),env('APP_NAME'))
                     ->view('emails.user_password_recover')
                     ->subject('Recuperar su Contraseña')
-                    ->with($this->data);*/
+                    ->with($this->data);
     }
 }
