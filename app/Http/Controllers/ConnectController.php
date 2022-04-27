@@ -41,7 +41,7 @@ class ConnectController extends Controller
         $validator = Validator::make($request->all(),$rules,$messages);
 
         if($validator->fails()):
-            return back()->withErrors($validator)->with('message','Se Ha Producido Un Herror')->with('typealert','danger');
+            return back()->withErrors($validator)->with('message','Se Ha Producido Un Error')->with('typealert','danger');
         else:
             if( Auth::attempt(['email'=>$request->input('email'),'password'=>$request->input('password')],false)):
                 if(Auth::user()->status == '100' ):
@@ -85,7 +85,7 @@ class ConnectController extends Controller
         $validator = Validator::make($request->all(),$rules,$messages);
 
         if($validator->fails()):
-            return back()->withErrors($validator)->with('message','Se Ha Producido Un Herror')->with('typealert','danger')->withInput();
+            return back()->withErrors($validator)->with('message','Se Ha Producido Un Error')->with('typealert','danger')->withInput();
         else:
             $user = new User;
             $user->name = e($request->input('name'));
@@ -131,7 +131,7 @@ class ConnectController extends Controller
         $validator = Validator::make($request->all(),$rules,$messages);
 
         if($validator->fails()):
-            return back()->withErrors($validator)->with('message','Se Ha Producido Un Herror')->with('typealert','danger')->withInput();
+            return back()->withErrors($validator)->with('message','Se Ha Producido Un Error')->with('typealert','danger')->withInput();
         else:
             $user = User::where('email',$request->input('email'))->count();
             if($user == '1'):
@@ -142,10 +142,10 @@ class ConnectController extends Controller
                 $u->password_code = $code;
                 if($u->save()):
                     Mail::to($user->email)->send(new UserSendRecover($data));
-                    return redirect('/reset?email='.$user->email)->with('message','Ingrese el codigo enviado a su correo Electronico')->with('typealert','success');
+                    return redirect('/reset?email='.$user->email)->with('message','Ingrese el código enviado a su correo Electrónico')->with('typealert','success');
                 endif;
             else:
-                return back()->withErrors($validator)->with('message','Este Correo Electronico No Existe')->with('typealert','danger')->withInput();
+                return back()->withErrors($validator)->with('message','Este Correo Electrónico No Existe')->with('typealert','danger')->withInput();
             endif;
 
         endif;
