@@ -14,7 +14,7 @@ class AñadiendoCodigoDePassword extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('password_code')->after('password');
+            $table->string('password_code')->after('password')->nullable();
         });
     }
 

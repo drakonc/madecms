@@ -151,4 +151,9 @@ class ConnectController extends Controller
         endif;
     }
 
+    public function getReset(Request $request){
+        $data = ['email' => $request->input('email')];
+        return view('connect.reset',$data);
+    }
+
 }
