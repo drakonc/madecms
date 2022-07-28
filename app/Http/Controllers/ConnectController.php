@@ -184,7 +184,7 @@ class ConnectController extends Controller
                 if($user->save()):
                     $data = ['name' => $user->name, 'password' => $new_password];
                     Mail::to($user->email)->send(new UserSendNewPassword($data));
-                    return redirect('/login')->with('message','Se restauro la contraseña correctamente')->with('typealert','success');
+                    return redirect('/login')->with('message','Se restauro la contraseña correctamente, Revisa la bandeja de tu correo hay esta tu nueva contraseña')->with('typealert','success');
                 endif;
             else:
                 return back()->withErrors($validator)->with('message','Este Correo Electrónico o el codigo de recuperación Son Erróneos')->with('typealert','danger')->withInput();
