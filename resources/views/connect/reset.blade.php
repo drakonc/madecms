@@ -16,7 +16,7 @@
                 <label for="email">Correo Electrónico:</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="far fa-envelope-open"></i></span>
-                    {!! Form::email('email', $email, ['id'=>'email','class' => 'form-control','required', 'disabled'])!!}
+                    {!! Form::email('email', $email, ['id'=>'email','class' => 'form-control','required','readonly'])!!}
                 </div>
 
                 <label for="codigo" class="mtop16">Codigo de Recuperacion:</label>
