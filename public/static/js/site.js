@@ -76,7 +76,7 @@ function load_products(section){
                                 </div>
                                 <img src="${base}/uploads/${product.file_path}/t_${product.image}" />
                             </div>
-                            <a href="${base}/product/${product.id}/${product.slug}">
+                            <a href="${base}/product/${product.id}/${product.slug}" title="${product.name}">
                                 <div class="title">${product.name}</div>
                                 <div class="price">${currency}${product.price}</div>
                                 <div class="options"></div>

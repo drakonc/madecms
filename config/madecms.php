@@ -7,6 +7,7 @@
         'map' => 'Carrera 17D # 39 - 69',
         'mantenimiento_mode' => '1',
         'products_per_page' => '5',
+        'products_per_page_random' => '10',
     ] 
 
 ?> 

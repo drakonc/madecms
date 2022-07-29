@@ -66,7 +66,14 @@
                             <label for="products_per_page">Productos a Mostrar Por Pagina:</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="far fa-keyboard"></i></span>
-                                {!! Form::number('products_per_page', Config::get('madecms.products_per_page'), ['id'=>'products_per_page','class' => 'form-control'])!!}
+                                {!! Form::number('products_per_page' ,Config::get('madecms.products_per_page'), ['id'=>'products_per_page','class' => 'form-control', 'min'=> 1, 'required'])!!}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="products_per_page_random">Productos a Mostrar Por Pagina (Random):</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="far fa-keyboard"></i></span>
+                                {!! Form::number('products_per_page_random' ,Config::get('madecms.products_per_page_random'), ['id'=>'products_per_page_random','class' => 'form-control', 'min'=> 1, 'required'])!!}
                             </div>
                         </div>
                     </div>

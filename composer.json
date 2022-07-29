@@ -16,6 +16,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "^2.5",
         "laravel/framework": "^8.12",
+        "laravel/sanctum": "^2.15",
         "laravel/socialite": "^5.0",
         "laravel/tinker": "^2.5",
         "laravelcollective/html": "^6.2",

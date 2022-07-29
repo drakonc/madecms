@@ -40,9 +40,9 @@
 
     <section>
         <div class="products_list" id="products_list"></div>
-        <div class="load_more_products">
+       {{--  <div class="load_more_products">
             <a href="#" id="load_more_products">Cargar Mas Productos</a>
-        </div>
+        </div> --}}
     </section>
 
 @endsection

@@ -40,3 +40,4 @@ Route::post('/account/edit/info',[UserController::class,'postAccountEditInfo'])-
 
 // Ajax Api Routers
 Route::post('api/md/favorites/add/{object}/{module}',[ApiJsController::class,'postFavoriteAdd']);
+Route::get('/getCookie',[ApiJsController::class,'getCookie']);
