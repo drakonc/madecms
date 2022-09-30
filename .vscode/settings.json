@@ -4,5 +4,6 @@
         "madecms",
         "Queueable",
         "sorder"
-    ]
+    ],
+    "liveServer.settings.multiRootWorkspaceName": "madecms"
 }
